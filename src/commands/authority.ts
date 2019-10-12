@@ -1,7 +1,7 @@
 /*
- *     File: lokaj.ts
+ *     File: authority.ts
  *     Project: 2ib-bot
- *     Copyright (C) 12/10/2019, 22:37  Mikołaj Bogucki, Franciszek Job
+ *     Copyright (C) 12/10/2019, 22:44  Mikołaj Bogucki, Franciszek Job
  *
  *     This program is free software: you can redistribute it and/or modify
  *     it under the terms of the GNU General Public License as published by
@@ -20,28 +20,22 @@
 import {command} from "../App/Command";
 import MessengerBot from "../App/MessengerBot";
 import {Message} from "libfb/dist";
-import {get} from "request";
 
-export interface butlerData {
+export interface authorityData {
     butler1: string,
     butler2: string,
 }
 
 const command: command = {
-    aliases: ["dyżurny", "dyżurni"],
-    help: "Pozwala sprawdzić kto jest dyżurnym",
-    hidden: true,
-    name: "lokaj",
+    aliases: ["przewodniczacy", "hupert"],
+    help: "Pozwala sprawdzić kto jest przewodniczącym",
+    hidden: false,
+    name: "authority",
     params: [],
-    main(app: MessengerBot, message: Message, params: string[]) {
+    async main(app: MessengerBot, message: Message, params: string[]) {
         try {
-            //TODO: Dodać url API
-            get('', function (error, response, body) {
-                if (error) throw new Error("Nie udało się uzyskać danych na temat dyżurnych");
-                if (response.statusCode !== 200) throw new Error(`Serwer zwrócił status ${response.statusCode} zamiast 200`);
-                let data: butlerData = JSON.parse(body);
-                app.client.sendMessage(message.threadId, `Dyżurni dzisiaj to: ${data.butler1} i ${data.butler2}`);
-            });
+            let user = await app.client.getUserInfo('100010293846413');
+            app.client.sendMessage(message.threadId, `Naszym przewodniczącym jest: ${user.name} (${user.emailAddresses[0]})`);
         } catch (e) {
             app.client.sendMessage(message.threadId, `Wystąpił błąd: ${e.message}`);
         }

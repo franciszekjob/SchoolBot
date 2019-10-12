@@ -1,7 +1,7 @@
 /*
  *     File: help.ts
  *     Project: 2ib-bot
- *     Copyright (C) 12/10/2019, 21:07  Mikołaj Bogucki, Franciszek Job
+ *     Copyright (C) 12/10/2019, 22:43  Mikołaj Bogucki, Franciszek Job
  *
  *     This program is free software: you can redistribute it and/or modify
  *     it under the terms of the GNU General Public License as published by
@@ -27,13 +27,13 @@ function generateDescriptionString(command: CommandStoreVersion) {
     if (command.aliases.length === 0) {
         aliasesStr = ""
     } else {
-        aliasesStr = `Aliasy: ${command.aliases.join(", ")}`;
+        aliasesStr = `Aliasy: ${command.aliases.join(", ")} `;
     }
     let paramsStr: string;
     if (command.params.length === 0) {
         paramsStr = "";
     } else {
-        paramsStr = " <" + command.params.join("> <") + "> ";
+        paramsStr = "<" + command.params.join("> <") + "> ";
     }
     return {aliasesStr, paramsStr};
 }
@@ -49,12 +49,12 @@ const help: command = {
         if (!!params[0]) {
             let command = find(app.commands, {name: params[0]});
             let {paramsStr, aliasesStr} = generateDescriptionString(command);
-            app.client.sendMessage(message.threadId, `${command.name}${paramsStr}${aliasesStr} - ${command.help}`);
+            app.client.sendMessage(message.threadId, `${command.name} ${paramsStr}${aliasesStr}- ${command.help}`);
         } else {
             let tmpStr: string[] = [];
             for (let command of app.commands) {
                 let {paramsStr, aliasesStr} = generateDescriptionString(command);
-                if (!command.hidden) tmpStr.push(`${command.name}${paramsStr}${aliasesStr} - ${command.help}`);
+                if (!command.hidden) tmpStr.push(`${command.name} ${paramsStr}${aliasesStr}- ${command.help}`);
             }
             app.client.sendMessage(message.threadId, tmpStr.join("\n\n"));
         }
