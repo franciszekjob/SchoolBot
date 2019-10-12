@@ -38,3 +38,5 @@ const command: command = {
     }
 
 };
+
+export default command;
