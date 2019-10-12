@@ -64,7 +64,7 @@ Aby zbudować projekt i go uruchomić wystarczy wpisać w terminal `grunt`
 Gdy chcemy tylko zbudować projekt wpisujemy `grunt build`
 
 ## Logo Poszukiwane
-Jeśli chciał(a) byś stworzyć logo do tego bota [dodaj issue](https://bitbucket.org/fedox8/messengerbot-pl/issues/new) i dołącz do niego logo.
+Jeśli chciał(a) byś stworzyć logo do tego bota dodaj issue i dołącz do niego logo.
 
 Z góry dziękuję :)
 
@@ -77,7 +77,7 @@ Z góry dziękuję :)
 Ten projekt jest dostępny na licencji GNU GPL3
 
 ```
-Copyright (C) 12/10/2019, 19:30 Mikołaj Bogucki
+Copyright (C) 12/10/2019, 19:30 Mikołaj Bogucki, Franciszek Job
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
