@@ -13,7 +13,7 @@ Wymagania:
  
 Na samym początku kolnujemy repo
 ```
-git clone https://fedox8@bitbucket.org/fedox8/messengerbot-pl.git
+git clone https://github.com/Fiiranek/SchoolBot.git
 ```
 Później należy zainstalować NodeJS (optymalnie w wersji >= 10). Instalator można pobrać z oficjalnej strony [nodejs.org](https://nodejs.org/en/)
 
