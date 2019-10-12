@@ -1,7 +1,7 @@
 /*
  *     File: lokaj.ts
  *     Project: 2ib-bot
- *     Copyright (C) 12/10/2019, 21:23  Mikołaj Bogucki, Franciszek Job
+ *     Copyright (C) 12/10/2019, 21:38  Mikołaj Bogucki, Franciszek Job
  *
  *     This program is free software: you can redistribute it and/or modify
  *     it under the terms of the GNU General Public License as published by
@@ -22,6 +22,10 @@ import MessengerBot from "../App/MessengerBot";
 import {Message} from "libfb/dist";
 import {get} from "request";
 
+export interface butlerData {
+    butler1: string,
+    butler2: string,
+}
 
 const command: command = {
     aliases: ["dyżurny", "dyżurni"],
@@ -30,9 +34,17 @@ const command: command = {
     name: "lokaj",
     params: [],
     main(app: MessengerBot, message: Message, params: string[]) {
-        get('', function () {
-
-        })
+        try {
+            //TODO: Dodać url API
+            get('', function (error, response, body) {
+                if (error) throw new Error("Nie udało się uzyskać danych na temat dyżurnych");
+                if (response.statusCode !== 200) throw new Error(`Serwer zwrócił status ${response.statusCode} zamiast 200`);
+                let data: butlerData = JSON.parse(body);
+                app.client.sendMessage(message.threadId, `Dyżurni dzisiaj to: ${data.butler1} i ${data.butler2}`);
+            });
+        } catch (e) {
+            app.client.sendMessage(message.threadId, `Wystąpił błąd: ${e.message}`);
+        }
     }
 
 };
