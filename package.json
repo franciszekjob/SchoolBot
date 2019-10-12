@@ -1,0 +1,25 @@
+{
+  "name": "messenger-lokaj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^12.7.11",
+    "grunt": "^1.0.4",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-exec": "^3.0.0",
+    "libfb": "^2.3.5",
+    "lodash": "^4.17.15",
+    "nekos.life": "^2.0.4",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "@types/request": "^2.48.3"
+  }
+}

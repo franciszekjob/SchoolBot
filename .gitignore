@@ -1,0 +1,6 @@
+node_modules
+build
+config.js
+*lock*
+.log
+.idea
