@@ -68,9 +68,10 @@ Jeśli chciał(a) byś stworzyć logo do tego bota [dodaj issue](https://bitbuck
 
 Z góry dziękuję :)
 
-## Autor
+## Autorzy
 
 * **Mikołaj Bogucki** ([Fedox](https://fedox.pl))
+* **Franciszek Job** ([Firanek](https://firanek.tech/))
 
 ## Licencja
 Ten projekt jest dostępny na licencji GNU GPL3
