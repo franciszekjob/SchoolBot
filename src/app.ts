@@ -1,7 +1,7 @@
 /*
  *     File: app.ts
- *     Project: messenger-bot-pl
- *     Copyright (C) 12/10/2019, 18:58  Mikołaj Bogucki
+ *     Project: 2ib-bot
+ *     Copyright (C) 12/10/2019, 21:05  Mikołaj Bogucki, Franciszek Job
  *
  *     This program is free software: you can redistribute it and/or modify
  *     it under the terms of the GNU General Public License as published by
