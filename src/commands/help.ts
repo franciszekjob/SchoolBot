@@ -1,7 +1,7 @@
 /*
  *     File: help.ts
  *     Project: 2ib-bot
- *     Copyright (C) 12/10/2019, 22:43  Mikołaj Bogucki, Franciszek Job
+ *     Copyright (C) 13/10/2019, 11:54 Mikołaj Bogucki
  *
  *     This program is free software: you can redistribute it and/or modify
  *     it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@ function generateDescriptionString(command: CommandStoreVersion) {
     if (command.aliases.length === 0) {
         aliasesStr = ""
     } else {
-        aliasesStr = `Aliasy: ${command.aliases.join(", ")} `;
+        aliasesStr = `| ${command.aliases.join(", ")} | `;
     }
     let paramsStr: string;
     if (command.params.length === 0) {
