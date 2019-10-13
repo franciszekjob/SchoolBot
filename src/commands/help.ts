@@ -1,7 +1,7 @@
 /*
  *     File: help.ts
  *     Project: 2ib-bot
- *     Copyright (C) 13/10/2019, 11:54 Mikołaj Bogucki
+ *     Copyright (C) 13/10/2019, 11:57 Mikołaj Bogucki
  *
  *     This program is free software: you can redistribute it and/or modify
  *     it under the terms of the GNU General Public License as published by
@@ -48,6 +48,7 @@ const help: command = {
     main(app: MessengerBot, message: Message, params: string[]) {
         if (!!params[0]) {
             let command = find(app.commands, {name: params[0]});
+            if(!command) return app.client.sendMessage(message.threadId, `Nie znaleziono komendy ${params[0]}`);
             let {paramsStr, aliasesStr} = generateDescriptionString(command);
             app.client.sendMessage(message.threadId, `${command.name} ${paramsStr}${aliasesStr}- ${command.help}`);
         } else {
